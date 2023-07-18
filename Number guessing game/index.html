@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number guessing game</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="background-gif"></div>
+    <div class="game-container">
+      <h1>Number guessing game</h1>
+      <form>
+        <center>
+          <style>
+            .typing-text {
+              font-size: 24px;
+              color: #000;
+              font-family: Arial, sans-serif;
+              overflow: hidden; /* این خط برای پنهان کردن متن است */
+              white-space: nowrap; /* این خط برای جلوگیری از شکستن خط است */
+              border-right: .15em solid #000; /* خط دار کردن آخر کلمه */
+              display: inline-block;
+              vertical-align: middle;
+              animation: typing 2s steps(20, end), blink-caret .75s step-end infinite;
+            }
+        
+            @keyframes typing {
+              from { width: 0 }
+              to { width: 100% }
+            }
+        
+            @keyframes blink-caret {
+              from, to { border-color: transparent }
+              50% { border-color: #000 }
+            }
+            </style>
+            </head>
+            <body>
+                <h1 class="typing-text"></h1>
+            <script>
+            const text = "Guess a number between 1 and 100:";
+            let textIndex = 0;
+        
+            function typing() {
+              if (textIndex >= text.length) {
+                textIndex = 0; // اگر به انتهای متن رسیدیم، از ابتدا شروع کن
+              }
+              document.querySelector('.typing-text').textContent = text.slice(0, textIndex + 1);
+              textIndex++;
+            }
+        
+            setInterval(typing, 100);
+            </script>
+        <style>
+        h1{
+            border: 3px solid rgb(102, 55, 212);
+            border-radius: 30px;
+            text-shadow: 3px 3px 5px hsl(160, 98%, 51%),-3px -3px 5px hsl(202, 99%, 43%);
+        }
+        </style>
+        </center>
+        <input type="number" id="guess-input" min="1" max="100" required>
+        <button type="submit" id="guess-btn">Guess!</button>
+        <a href="12.html" wayt>More games</a>
+        <style>
+            a{
+                border: 3px solid #3366cc;
+                border-radius: 30px;
+                text-shadow: 3px 3px 5px hsl(160, 98%, 51%),-3px -3px 5px hsl(202, 99%, 43%);
+                font-size: 20px;
+                padding: 5px;
+             }
+            </style>
+      </form>
+      <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
